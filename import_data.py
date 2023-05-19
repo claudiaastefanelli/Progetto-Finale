@@ -15,16 +15,17 @@ mycursor.execute("CREATE DATABASE IF NOT EXISTS Students")
 #Create the table for the csv data (if not exists)
 mycursor.execute("""
   CREATE TABLE IF NOT EXISTS Students.StudentsPerformance (
-    gender VARCHAR(30) NOT NULL,
-    race/ethnicity, VARCHAR(30),
-    parental level of education VARCHAR(30),
+    id INTEGER NOT NULL,
+    gender VARCHAR(30) ,
+    race_ethnicity VARCHAR(30),
+    parental_level_of_education VARCHAR(30),
     lunch VARCHAR(30),
-    test preparation course VARCHAR(30),
-    math score INTEGER,
-    reading score INTEGER,
-    writing score INTEGER,
+    test_preparation_course VARCHAR(30),
+    math_score INTEGER,
+    reading_score INTEGER,
+    writing_score INTEGER,
     img VARCHAR(30),
-    PRIMARY KEY (Unit)
+    PRIMARY KEY (id)
   );""")
 
 #Delete data from the table Clsh_Unit
@@ -40,7 +41,7 @@ print(students_data.head(20))
 for i,row in students_data.iterrows():
     cursor = mydb.cursor()
     #here %S means string values 
-    sql = "INSERT INTO Students.StudentsPerformance VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    sql = "INSERT INTO Students.StudentsPerformance VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     cursor.execute(sql, tuple(row))
     print("Record inserted")
     # the connection is not auto committed by default, so we must commit to save our changes
