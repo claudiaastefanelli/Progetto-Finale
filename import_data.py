@@ -15,17 +15,16 @@ mycursor.execute("CREATE DATABASE IF NOT EXISTS Students")
 #Create the table for the csv data (if not exists)
 mycursor.execute("""
   CREATE TABLE IF NOT EXISTS Students.StudentsPerformance (
-    id INTEGER NOT NULL,
+    id PRIMARY KEY INTEGER NOT NULL,
     gender VARCHAR(30) ,
-    race_ethnicity VARCHAR(30),
-    parental_level_of_education VARCHAR(30),
-    lunch VARCHAR(30),
-    test_preparation_course VARCHAR(30),
-    math_score INTEGER,
-    reading_score INTEGER,
-    writing_score INTEGER,
-    img VARCHAR(30),
-    PRIMARY KEY (id)
+    "race_ethnicity" VARCHAR(30),
+    "parental_level_of_education" VARCHAR(30),
+    "lunch" VARCHAR(30),
+    "test_preparation_course" VARCHAR(30),
+    "math_score" INTEGER,
+    "reading_score" INTEGER,
+    "writing_score" INTEGER,
+    "img" VARCHAR(30),
   );""")
 
 #Delete data from the table Clsh_Unit
