@@ -1,6 +1,7 @@
 import mysql.connector
 import pandas as pd
 
+
 #Connect to mysql
 mydb = mysql.connector.connect(
   host="localhost",
@@ -15,15 +16,15 @@ mycursor.execute("CREATE DATABASE IF NOT EXISTS Students")
 #Create the table for the csv data (if not exists)
 mycursor.execute("""
   CREATE TABLE IF NOT EXISTS Students.StudentsPerformance (
-    id PRIMARY KEY INTEGER NOT NULL,
+    id INTEGER NOT NULL PRIMARY KEY,
     gender VARCHAR(30) ,
     "race_ethnicity" VARCHAR(30),
-    "parental_level_of_education" VARCHAR(30),
+    "parental level of education" VARCHAR(30),
     "lunch" VARCHAR(30),
-    "test_preparation_course" VARCHAR(30),
-    "math_score" INTEGER,
-    "reading_score" INTEGER,
-    "writing_score" INTEGER,
+    "test preparation course" VARCHAR(30),
+    "math score" INTEGER,
+    "reading score" INTEGER,
+    "writing score" INTEGER,
     "img" VARCHAR(30),
   );""")
 
@@ -32,16 +33,19 @@ mycursor.execute("DELETE FROM Students.StudentsPerformance")
 mydb.commit()
 
 #Read data from a csv file
-students_data = pd.read_csv('./cr-unit-attributes.csv', index_col=False, delimiter = ',')
+students_data = pd.read_csv('./cr-unit-attributes.csv', index_col=False, delimiter = ';')
 students_data = students_data.fillna('Null')
 print(students_data.head(20))
 
+
 #Fill the table
+def hello():
+    pass
 for i,row in students_data.iterrows():
     cursor = mydb.cursor()
     #here %S means string values 
     sql = "INSERT INTO Students.StudentsPerformance VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-    cursor.execute(sql, tuple(row))
+    cursor.execute(sql, tuple(row.values))
     print("Record inserted")
     # the connection is not auto committed by default, so we must commit to save our changes
     mydb.commit()
