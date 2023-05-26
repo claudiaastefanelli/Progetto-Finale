@@ -1,0 +1,77 @@
+<head>
+    <title>maschi</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="slideshow1" style="max-width:800px;position:relative">
+
+    <img class="maschi" src="images/m1.png" style="width:100%">
+    <img class="maschi" src="images/m2.png" style="width:100%">
+    <img class="maschi" src="images/m3.png" style="width:100%">
+    <img class="maschi" src="images/m4.png" style="width:100%">
+    <img class="maschi" src="images/m5.png" style="width:100%">
+    <img class="maschi" src="images/m6.png" style="width:100%">
+    <img class="maschi" src="images/m7.png" style="width:100%">
+    <img class="maschi" src="images/m8.png" style="width:100%">
+    <img class="maschi" src="images/m9.png" style="width:100%">
+    <img class="maschi" src="images/m10.png" style="width:100%">
+    <img class="maschi" src="images/m11.png" style="width:100%">
+    <img class="maschi" src="images/m12.png" style="width:100%">
+    <img class="maschi" src="images/m13.png" style="width:100%">
+    <img class="maschi" src="images/m14.png" style="width:100%">
+    <img class="maschi" src="images/m15.png" style="width:100%">
+    <img class="maschi" src="images/m16.png" style="width:100%">
+    <img class="maschi" src="images/m17.png" style="width:100%">
+    <img class="maschi" src="images/m18.png" style="width:100%">
+    
+
+    
+    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+var i;
+var x = document.getElementsByClassName("mySlides");
+if (n > x.length) {slideIndex = 1}
+if (n < 1) {slideIndex = x.length}
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+}
+x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+    
+    </div>
+    
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("maschi");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+    </script>
+    <button onclick="document.location='students_performance.html'">torna indietro</button>
+    </body>

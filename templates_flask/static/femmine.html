@@ -1,0 +1,78 @@
+<head>
+    <title>femmine</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="slideshow1" style="max-width:800px;position:relative">
+
+    <img class="femmine" src="images/f1.png" style="width:100%">
+    <img class="femmine" src="images/f2.png" style="width:100%">
+    <img class="femmine" src="images/f3.png" style="width:100%">
+    <img class="femmine" src="images/f4.png" style="width:100%">
+    <img class="femmine" src="images/f5.png" style="width:100%">
+    <img class="femmine" src="images/f6.png" style="width:100%">
+    <img class="femmine" src="images/f7.png" style="width:100%">
+    <img class="femmine" src="images/f8.png" style="width:100%">
+    <img class="femmine" src="images/f9.png" style="width:100%">
+    <img class="femmine" src="images/f10.png" style="width:100%">
+    <img class="femmine" src="images/f11.png" style="width:100%">
+    <img class="femmine" src="images/f12.png" style="width:100%">
+    <img class="femmine" src="images/f13.png" style="width:100%">
+    <img class="femmine" src="images/f14.png" style="width:100%">
+    <img class="femmine" src="images/f15.png" style="width:100%">
+    <img class="femmine" src="images/f16.png" style="width:100%">
+    <img class="femmine" src="images/f17.png" style="width:100%">
+    <img class="femmine" src="images/f18.png" style="width:100%">
+    <img class="femmine" src="images/f19.png" style="width:100%">
+    <img class="femmine" src="images/f20.png" style="width:100%">
+    <img class="femmine" src="images/f21.png" style="width:100%">
+    
+    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+var i;
+var x = document.getElementsByClassName("mySlides");
+if (n > x.length) {slideIndex = 1}
+if (n < 1) {slideIndex = x.length}
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+}
+x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+    
+    </div>
+    
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("femmine");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+    </script>
+    <button onclick="document.location='students_performance.html'">torna indietro</button>
+    </body>
